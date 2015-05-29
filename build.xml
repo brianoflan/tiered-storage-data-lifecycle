@@ -1,0 +1,213 @@
+<project name="storageAndDataLifecycle" 
+  default="check" 
+  
+  >
+  <!--
+  xmlns:ac="antlib:net.sf.antcontrib" >
+  -->
+  <echo message="file.separator=q(${file.separator})." />
+  
+  <property file="${basedir}/build.properties" />
+  <property file="${basedir}/default.properties" />
+  <condition property="ant-contrib" value="C:\Users\bflannery\Documents\_lib\ant-contrib.1.0.0-b3.jar" >
+    <available file="C:\Users\bflannery\Documents\_lib\ant-contrib.1.0.0-b3.jar" />
+  </condition>
+  <taskdef resource="net/sf/antcontrib/antlib.xml">
+    <classpath>
+      <pathelement location="${ant-contrib}"/>
+    </classpath>
+  </taskdef>
+  <target name="_init" >
+    <exec executable="cygpath" outputproperty="bash" >
+      <arg value="-w" /><!-- or - - windows (with both dashes together) -->
+      <arg value="/bin/bash" />
+    </exec>
+  </target>
+  <target name="check" depends="_init" >
+    <!--exec executable="${basedir}/${tierStor}/build.sh" -->
+    <exec executable="${bash}" failonerror="true" >
+      <arg value="${basedir}/${tierStor}/build.sh" />
+      <arg value="${storageConstant}" />
+      <arg value="check" />
+    </exec>
+  </target>
+  <target name="build" depends="_init" >
+    <!--exec executable="${basedir}/${tierStor}/build.sh" -->
+    <exec executable="${bash}" outputproperty="overfull.tiers" 
+      errorproperty="overfull.tiers.err" 
+      error="${basedir}/overfull.tiers.err.txt" >
+      <arg value="${basedir}/${tierStor}/build.sh" />
+      <arg value="${storageConstant}" />
+      <arg value="ageOff" />
+    </exec>
+    <echo message="overfull.tiers=q(${overfull.tiers})." />
+    <!-- <ac:foreach list="${overfull.tiers}" -->
+    <foreach list="${overfull.tiers}" 
+      target="age-off-tier" 
+      param="age.off.tier" 
+      
+      >
+      <!--
+      delimiter=" " >
+      -->
+      
+    </foreach>
+    <!-- </ac:foreach> -->
+  </target>
+  <target name="age-off-tier" >
+    <echo message="age.off.tier=q(${age.off.tier})." />
+    <tstamp>
+      <format property="dateX" pattern="yyyy-MM-dd.hhmm" timezone="UTC" />
+    </tstamp>
+    <math result="next.tier" datatype="int" operand1="${age.off.tier}" operation="+" operand2="1" />
+    <math result="prior.tier" datatype="int" operand1="${age.off.tier}" operation="-" operand2="1" />
+    <!--property name="dest.dir" value="${basedir}/${storTierPrefix}${next.tier}/${agedDir}/tier${age.off.tier}_${dateX}" /-->
+    <property name="dest.dir" value="${basedir}/${storTierPrefix}${next.tier}/${agedDir}${age.off.tier}" />
+    <property name="src.dir" value="${basedir}/${storTierPrefix}${age.off.tier}" />
+    <mkdir dir="${dest.dir}" />
+    <antcall target="age-off-largest" />
+    <antcall target="age-off-oldest" />
+    
+  </target>
+  
+  <target name="age-off-largest" depends="age-off-largest-check,do-age-off-largest" ><!-- age.off.tier, next.tier, dest.dir, src.dir -->
+  </target>
+  <target name="age-off-largest-check" ><!-- age.off.tier, next.tier, dest.dir, src.dir -->
+    <last id="do.age.off.largest.ref" >
+    <!--first id="do.age.off.largest.ref" -->
+      <sort>
+        <fileset dir="${src.dir}" >
+          <type type="file" />
+          <!--exclude name="_aged*/**" /-->
+        </fileset>
+        <!--reverse xmlns="antlib:org.apache.tools.ant.types.resources.comparators"-->
+          <size />
+        <!--/reverse-->
+      </sort>
+    <!--/first-->
+    </last>
+    <!--pathconvert property="do.age.off.largest.tmp" refid="do.age.off.largest.ref" -->
+    <pathconvert property="do.age.off.largest" refid="do.age.off.largest.ref" >
+      <!--map from="${basedir}/${storTierPrefix}${age.off.tier}" to="" /-->
+      <map from="${src.dir}" to="" />
+    </pathconvert>
+    
+    <!--
+    <property name="do.age.off.largest.abs" location="${do.age.off.largest.tmp}" />
+    <property name="do.age.off.largest" value="${do.age.off.largest.abs}" relative="true" />
+    -->
+    
+    <condition property="age.off.largest.check" >
+      <not>
+        <equals arg1="${do.age.off.largest}" arg2="" />
+      </not>
+    </condition>
+    <echo message="do.age.off.largest=q(${do.age.off.largest})." />
+  </target>
+  <target name="do-age-off-largest" if="age.off.largest.check" ><!-- age.off.tier, next.tier, dest.dir, src.dir -->
+    <echo message="do.age.off.largest=q(${do.age.off.largest})." />
+    <antcall target="do-age-off" >
+      <param name="do.age.off.file" value="${do.age.off.largest}" />
+    </antcall>
+  </target>
+  
+  <target name="age-off-oldest" depends="age-off-oldest-check,do-age-off-oldest" ><!-- age.off.tier, next.tier, dest.dir, src.dir -->
+  </target>
+  <target name="age-off-oldest-check" ><!-- age.off.tier, next.tier, dest.dir, src.dir -->
+    <!--
+    <last id="do.age.off.oldest.ref" >
+    -->
+    <first id="do.age.off.oldest.ref" >
+      <sort>
+        <fileset dir="${src.dir}" >
+          <type type="file" />
+          <exclude name="_aged*/**" />
+        </fileset>
+        <!--reverse xmlns="antlib:org.apache.tools.ant.types.resources.comparators"-->
+          <date />
+        <!--/reverse-->
+      </sort>
+    </first>
+    <!--
+    </last>
+    -->
+    <!--pathconvert property="do.age.off.oldest.tmp" refid="do.age.off.oldest.ref" -->
+    <pathconvert property="do.age.off.oldest" refid="do.age.off.oldest.ref" >
+      <!--map from="${basedir}/${storTierPrefix}${age.off.tier}" to="" /-->
+      <map from="${src.dir}" to="" />
+    </pathconvert>
+    
+    <!--
+    <property name="do.age.off.oldest.abs" location="${do.age.off.oldest.tmp}" />
+    <property name="do.age.off.oldest" value="${do.age.off.oldest.abs}" relative="true" />
+    -->
+    
+    <condition property="age.off.oldest.check" >
+      <not>
+        <equals arg1="${do.age.off.oldest}" arg2="" />
+      </not>
+    </condition>
+    <echo message="do.age.off.oldest=q(${do.age.off.oldest})." />
+  </target>
+  <target name="do-age-off-oldest" if="age.off.oldest.check" ><!-- age.off.tier, next.tier, dest.dir, src.dir -->
+    <echo message="do.age.off.oldest=q(${do.age.off.oldest})." />
+    <antcall target="do-age-off" >
+      <param name="do.age.off.file" value="${do.age.off.oldest}" />
+    </antcall>
+  </target>
+  
+  <!--
+  <target name="age-off-oldest" >
+    <first id="do.age.off.oldest.ref" >
+      <sort>
+        <fileset dir="${src.dir}" >
+          <type type="file" />
+          <exclude name="_aged*/**" />
+        </fileset>
+          <date />
+      </sort>
+    </first>
+    <pathconvert property="do.age.off.oldest" refid="do.age.off.oldest.ref" >
+      <map from="${basedir}/${storTierPrefix}${age.off.tier}" to="" />
+    </pathconvert>
+    <echo message="do.age.off.oldest=q(${do.age.off.oldest})." />
+    
+    <antcall target="do-age-off" >
+      <param name="do.age.off.file" value="${do.age.off.oldest}" />
+    </antcall>
+  </target>
+  -->
+  
+  <target name="do-age-off" ><!-- do.age.off.file  -->
+    <echo message="do-age-off prior.tier=q(${prior.tier})." />
+    <echo message="do-age-off age.off.tier=q(${age.off.tier})." />
+    <echo message="do-age-off next.tier=q(${next.tier})." />
+    <echo message="do-age-off src.dir=q(${src.dir})." />
+    <echo message="do-age-off do.age.off.file=q(${do.age.off.file})." />
+    <!-- move -->
+    <dirname property="do.age.off.file.dirname.tmp" file="${src.dir}/${do.age.off.file}" />
+    <echo message="do.age.off.file.dirname.tmp=q(${do.age.off.file.dirname.tmp})." />
+    <!--pathconvert property="do.age.off.file.dirname" targetos="unix" -->
+    <pathconvert property="do.age.off.file.dirname" >
+      <!--
+      <fileset file="${do.age.off.file.dirname.tmp}" />
+      <fileset dir="${do.age.off.file.dirname.tmp}" >
+        <exclude name="**/**" />
+      </fileset>
+      -->
+      <path location="${do.age.off.file.dirname.tmp}" />
+      <!--
+      <map from="${src.dir}" to="" />
+      <globmapper from="\_aged*\" to="" />
+      <globmapper from="${src.dir}${file.separator}_aged*${file.separator}" to="" />
+      -->
+      <map from="${src.dir}${file.separator}_aged${prior.tier}${file.separator}" to="" />
+      <map from="${src.dir}" to="" />
+    </pathconvert>
+    <echo message="Moving file '${src.dir} / ${do.age.off.file}'" />
+    <echo message="  todir '${dest.dir} / ${do.age.off.file.dirname}'." />
+    <move file="${src.dir}/${do.age.off.file}" todir="${dest.dir}/${do.age.off.file.dirname}" />
+    <!--
+    -->
+  </target>
+</project>

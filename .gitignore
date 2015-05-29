@@ -1,0 +1,5 @@
+.old/**
+storTier*/**
+overfull.tiers.err.txt
+find*.txt
+find*.txt.orig
