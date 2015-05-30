@@ -5,3 +5,4 @@
 overfull.tiers.err.txt
 **/find*.txt
 find*.txt.orig
+!tests/testAgeTwice/**/find*.gold.txt
