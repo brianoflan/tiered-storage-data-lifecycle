@@ -2,7 +2,7 @@
 **/.old/**
 # storTier*/**
 **/storTier*/**
-overfull.tiers.err.txt
+# overfull.tiers.err.txt
 **/find*.txt
-find*.txt.orig
-!tests/testAgeTwice/**/find*.gold.txt
+# find*.txt.orig
+!**/tests/testAgeTwice/**/find*.gold.txt
