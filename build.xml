@@ -66,7 +66,9 @@
   
   <target name="check" depends="_init" >
     <!--exec executable="${basedir}/${tierStor}/build.sh" -->
-    <exec executable="${bash}" failonerror="true" >
+    <exec executable="${bash}" failonerror="true"
+      dir="${tierRoot}"
+      >
       <arg value="${tierRes}/${tierStor}/build.sh" />
       <arg value="${storageConstant}" />
       <arg value="check" />
@@ -78,6 +80,7 @@
     <!--exec executable="${basedir}/${tierStor}/build.sh" -->
     <exec executable="${bash}" outputproperty="overfull.tiers" 
       errorproperty="overfull.tiers.err"
+      dir="${tierRoot}"
       >
       <!--
       error="${tierRoot}/overfull.tiers.err.txt"

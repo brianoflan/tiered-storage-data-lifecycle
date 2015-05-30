@@ -25,7 +25,7 @@ my $limits = {
   '9' => 1000000,
 } ;
 
-my $DEBUG=2 ;
+my $DEBUG=1 ;
 my $thisScript=$0 ;
 # my $thisDir=$(dirname $thisScript) ;
 my $thisDir=dirname( $thisScript );
@@ -55,6 +55,10 @@ if ( @ARGV ) {
     print STDERR "Replaced \$mode with $mode.\n" ;
   }
 }
+my $tierRoot = '.' ;
+if ( ! -d "${storTierPrefix}1" ) {
+  $tierRoot = '..' ;
+}
 
 sub numComma { # Returns a string of a number with thousands separated by commas
   my $result ;
@@ -77,7 +81,8 @@ sub main {
   my %badTiers = () ;
   my @errors = () ;
   my $n=1 ;
-  my $d="$thisDir/../$storTierPrefix$n" ;
+  # my $d="$thisDir/../$storTierPrefix$n" ;
+  my $d="$tierRoot/$storTierPrefix$n" ;
   # my $limitInit=$((limitInit + storageConstant )) ;
   # my $limitInit=$limitInit + $storageConstant ;
   my $limitPrior = 0 ;
@@ -190,7 +195,8 @@ sub main {
     }
     
     $n+=1 ;
-    $d="$thisDir/../$storTierPrefix$n" ;
+    # $d="$thisDir/../$storTierPrefix$n" ;
+    $d="$tierRoot/$storTierPrefix$n" ;
     if ( -d "$d" ) {
       if ( $DEBUG > 2 ) {
         print STDERR "Found folder '$d'.\n" ;
