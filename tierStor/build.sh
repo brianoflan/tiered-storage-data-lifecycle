@@ -20,9 +20,11 @@ fi ;
 
 which awk 1>&2 ;
 d="/cygdrive/c/Users/bflannery/Documents/save/save2/subsave1_cyg/cyg/bin" ;
-# export PATH="/usr/bin:$PATH" ;
-export PATH="$d:$PATH" ;
-echo "PATH q($PATH)." 1>&2 ;
+if [[ -d "$d" ]] ; then
+  # export PATH="/usr/bin:$PATH" ;
+  export PATH="$d:$PATH" ;
+  echo "PATH q($PATH)." 1>&2 ;
+fi ;
 
 # C:\Users\bflannery\Documents\save\_save6a\strawperl
 # C:/Users/bflannery/Documents/save/_save6a/strawperl
@@ -31,6 +33,8 @@ d="/cygdrive/c/Users/bflannery/Documents/save/_save6a/strawpl5p10" ;
 if [[ -d "$d" ]] ; then
   export PATH="$d/perl/site/bin:$d/perl/bin:$PATH" ;
 fi ;
+x=`pwd` ;
+echo "pwd $x" 1>&2 ;
 perl "$thisDir/$scriptBaseNoExt.pl" "$@" ;
 exit $? ;
 

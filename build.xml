@@ -1,46 +1,93 @@
-<project name="storageAndDataLifecycle" 
+<project name="tieredStorageAndDataLifecycle" 
   default="check" 
   
   >
   <!--
   xmlns:ac="antlib:net.sf.antcontrib" >
   -->
-  <echo message="file.separator=q(${file.separator})." />
   
+  <!--
+  <echo message="file.separator=q(${file.separator})." />
+  <echo message="basedir=q(${basedir})." />
+  <property name="tierRoot" value="." />
+  <property name="tierRoot" location="." />
+  -->
+  
+  <property name="tierRoot" location="${user.dir}" />
+  <echo message="tierRoot=q(${tierRoot})." />
+
+  <property file="${tierRoot}/build.properties" />
   <property file="${basedir}/build.properties" />
   <property file="${basedir}/default.properties" />
-  <condition property="ant-contrib" value="C:\Users\bflannery\Documents\_lib\ant-contrib.1.0.0-b3.jar" >
-    <available file="C:\Users\bflannery\Documents\_lib\ant-contrib.1.0.0-b3.jar" />
+  <property environment="env" />
+  
+  <condition property="tierRes" value="${env.tier_res}" >
+    <available file="${env.tier_res}/${tierStor}" />
+  </condition>
+  <property name="tierRes" location="${tierRoot}/${env.tier_res}" />
+  <echo message="tierRes=q(${tierRes})." />
+  
+  <echo message="storageConstant=q(${storageConstant})." />
+
+  <condition property="ant-contrib" value="${ant.contrib.jar1}" >
+    <available file="${ant.contrib.jar1}" />
+  </condition>
+  <condition property="ant-contrib" value="${ant.contrib.jar2}" >
+    <available file="${ant.contrib.jar2}" />
   </condition>
   <taskdef resource="net/sf/antcontrib/antlib.xml">
     <classpath>
       <pathelement location="${ant-contrib}"/>
     </classpath>
   </taskdef>
+  
+  
   <target name="_init" >
-    <exec executable="cygpath" outputproperty="bash" >
-      <arg value="-w" /><!-- or - - windows (with both dashes together) -->
-      <arg value="/bin/bash" />
+    <exec executable="uname" outputproperty="uname.o" >
+      <arg value="-o" />
     </exec>
+    <condition property="isCygwin" >
+      <equals arg1="Cygwin" arg2="${uname.o}" />
+    </condition>
+    <if>
+      <isset property="isCygwin" />
+      <then>
+        <exec executable="cygpath" outputproperty="bash" >
+          <arg value="-w" /><!-- or - - windows (with both dashes together) -->
+          <arg value="/bin/bash" />
+        </exec>
+      </then>
+      <else>
+        <property name="bash" value="/bin/bash" />
+      </else>
+    </if>
   </target>
+  
+  
   <target name="check" depends="_init" >
     <!--exec executable="${basedir}/${tierStor}/build.sh" -->
     <exec executable="${bash}" failonerror="true" >
-      <arg value="${basedir}/${tierStor}/build.sh" />
+      <arg value="${tierRes}/${tierStor}/build.sh" />
       <arg value="${storageConstant}" />
       <arg value="check" />
     </exec>
   </target>
-  <target name="build" depends="_init" >
+  
+  
+  <target name="ageoff" depends="_init" >
     <!--exec executable="${basedir}/${tierStor}/build.sh" -->
     <exec executable="${bash}" outputproperty="overfull.tiers" 
-      errorproperty="overfull.tiers.err" 
-      error="${basedir}/overfull.tiers.err.txt" >
-      <arg value="${basedir}/${tierStor}/build.sh" />
+      errorproperty="overfull.tiers.err"
+      >
+      <!--
+      error="${tierRoot}/overfull.tiers.err.txt"
+      -->
+      <arg value="${tierRes}/${tierStor}/build.sh" />
       <arg value="${storageConstant}" />
       <arg value="ageOff" />
     </exec>
     <echo message="overfull.tiers=q(${overfull.tiers})." />
+    <echo message="overfull.tiers.err=q(${overfull.tiers.err})." />
     <!-- <ac:foreach list="${overfull.tiers}" -->
     <foreach list="${overfull.tiers}" 
       target="age-off-tier" 
@@ -62,8 +109,8 @@
     <math result="next.tier" datatype="int" operand1="${age.off.tier}" operation="+" operand2="1" />
     <math result="prior.tier" datatype="int" operand1="${age.off.tier}" operation="-" operand2="1" />
     <!--property name="dest.dir" value="${basedir}/${storTierPrefix}${next.tier}/${agedDir}/tier${age.off.tier}_${dateX}" /-->
-    <property name="dest.dir" value="${basedir}/${storTierPrefix}${next.tier}/${agedDir}${age.off.tier}" />
-    <property name="src.dir" value="${basedir}/${storTierPrefix}${age.off.tier}" />
+    <property name="dest.dir" value="${tierRoot}/${storTierPrefix}${next.tier}/${agedDir}${age.off.tier}" />
+    <property name="src.dir" value="${tierRoot}/${storTierPrefix}${age.off.tier}" />
     <mkdir dir="${dest.dir}" />
     <antcall target="age-off-largest" />
     <antcall target="age-off-oldest" />
@@ -87,6 +134,7 @@
     <!--/first-->
     </last>
     <!--pathconvert property="do.age.off.largest.tmp" refid="do.age.off.largest.ref" -->
+    <echo message="do.age.off.largest.ref=q(${toString:do.age.off.largest.ref})" />
     <pathconvert property="do.age.off.largest" refid="do.age.off.largest.ref" >
       <!--map from="${basedir}/${storTierPrefix}${age.off.tier}" to="" /-->
       <map from="${src.dir}" to="" />

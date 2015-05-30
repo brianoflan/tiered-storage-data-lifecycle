@@ -25,20 +25,7 @@ my $limits = {
   '9' => 1000000,
 } ;
 
-if ( @ARGV ) {
-  $storageConstant = shift( @ARGV ) ;
-  if ( $DEBUG > 0 ) {
-    print STDERR "Replaced \$storageConstant with $storageConstant.\n" ;
-  }
-}
-if ( @ARGV ) {
-  $mode = shift( @ARGV ) ;
-  if ( $DEBUG > 0 ) {
-    print STDERR "Replaced \$mode with $mode.\n" ;
-  }
-}
-
-my $DEBUG=1 ;
+my $DEBUG=2 ;
 my $thisScript=$0 ;
 # my $thisDir=$(dirname $thisScript) ;
 my $thisDir=dirname( $thisScript );
@@ -55,6 +42,19 @@ if ( not( defined( $thisDir ) ) or ( $thisDir eq '' ) or ( $thisDir eq '.' ) ) {
 my $scriptBase = basename($thisScript) ;
 my $scriptBaseNoExt = $scriptBase ;
 $scriptBaseNoExt =~ s/[.][^.]+$// ;
+
+if ( @ARGV ) {
+  $storageConstant = shift( @ARGV ) ;
+  if ( $DEBUG > 0 ) {
+    print STDERR "Replaced \$storageConstant with $storageConstant.\n" ;
+  }
+}
+if ( @ARGV ) {
+  $mode = shift( @ARGV ) ;
+  if ( $DEBUG > 0 ) {
+    print STDERR "Replaced \$mode with $mode.\n" ;
+  }
+}
 
 sub numComma { # Returns a string of a number with thousands separated by commas
   my $result ;
