@@ -1,15 +1,14 @@
 #!/bin/bash
 
-if [[ -z $tier_res ]] ; then
-  export tier_res=. ;
-fi ;
+export tier_res=../.. ;
 
-# DEBUG=2 ;
+
+DEBUG=1 ;
 thisScript=$0 ;
 thisDir=$(dirname $thisScript) ;
 if [[ -z $thisDir || "$thisDir" == "." ]] ; then
   pwdX=$(pwd) ;
-  if [[ $DEBUG -gt 1 ]] ; then
+  if [[ $DEBUG -gt 0 ]] ; then
     echo "Updating thisDir from '$thisDir' to '$pwdX'." ;
   fi ;
   thisDir="$pwdX" ;
@@ -23,13 +22,16 @@ if [[ $DEBUG -gt 1 ]] ; then
 fi ;
 
 
+tier_func="$thisDir/$tier_res/build_functions.sh" ;
+if [[ ! -e "$tier_func" ]] ; then
+  echo "ERROR: Failed to find file $tier_func." ;
+  exit 1 ;
+fi ;
+source "$tier_func" ;
 
-# mk_find_file "-exec ls -ld {} \\;" "find_ls_ld_previous_structure.txt" ;
-# mk_find_file "-print" "find_previous_structure.txt" ;
+
 
 resetTiers ;
-
-# cd "$thisDir" ;
-# find ./$storTierPrefix* > ./find_storTier.txt ;
+rm -rf "$thisDir"/.old ;
 
 #
