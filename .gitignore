@@ -1,7 +1,7 @@
 # .old/**
 **/.old/**
 # storTier*/**
-**/storTier*/**
+# **/storTier*/**
 # overfull.tiers.err.txt
 **/find*.txt
 # find*.txt.orig
