@@ -1,0 +1,19 @@
+<project name="stilted_tiers" default="help" >
+    <property file="${basedir}/build.props" />
+    <property file="${basedir}/default.build.props" />
+    <property file="${basedir}/rsrc/default.build.props" />
+    <property file="${rsrc}/default.build.props" />
+    <property environment="env" />
+    
+    <!--
+    <echo message="basedir '${basedir}'" />
+    <echo message="rsrc '${rsrc}'" />
+    <exec executable="pwd" outputproperty="pwd">
+    </exec>
+    <echo message="pwd = ${pwd}" />
+    -->
+    
+    <import file="${rsrc}/stilts.build.xml" />
+    <import file="${rsrc}/default.build.xml" />
+    
+</project>

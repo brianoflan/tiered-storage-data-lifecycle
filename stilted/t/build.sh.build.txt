@@ -1,0 +1,532 @@
+ant -f /home/ubuntu/workspace/_b/s/t/build.xml build
+Buildfile: /home/ubuntu/workspace/_b/s/t/build.xml
+
+default.build:
+
+build-check-stilts:
+
+build-msrc:
+
+build-obxml:
+
+build:
+     [echo] In the build target of obxml.
+     [exec] Perl running do_OBXml.pl
+     [exec] Args: 
+     [exec] thisDir = '../../../w/stilts_t3/rsrc'
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/build.sh.xml build.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/build.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/build.sh.xml obxml build
+     [exec] infile obxml/strtr/build.sh.xml
+     [exec] outfile build/strtr/build.sh
+     [exec] outfile2 build/strtr/build.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/USE_TEMPLATE/storTier2/.gitignore.xml .gitignore.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/USE_TEMPLATE/storTier2/.gitignore.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/USE_TEMPLATE/storTier2/.gitignore.xml obxml build
+     [exec] infile obxml/strtr/USE_TEMPLATE/storTier2/.gitignore.xml
+     [exec] outfile build/strtr/USE_TEMPLATE/storTier2/.gitignore
+     [exec] outfile2 build/strtr/USE_TEMPLATE/storTier2/.gitignore.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/USE_TEMPLATE/build.properties.xml build.properties.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/USE_TEMPLATE/build.properties.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/USE_TEMPLATE/build.properties.xml obxml build
+     [exec] infile obxml/strtr/USE_TEMPLATE/build.properties.xml
+     [exec] outfile build/strtr/USE_TEMPLATE/build.properties
+     [exec] outfile2 build/strtr/USE_TEMPLATE/build.properties.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/USE_TEMPLATE/tiers.sh.xml tiers.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/USE_TEMPLATE/tiers.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/USE_TEMPLATE/tiers.sh.xml obxml build
+     [exec] infile obxml/strtr/USE_TEMPLATE/tiers.sh.xml
+     [exec] outfile build/strtr/USE_TEMPLATE/tiers.sh
+     [exec] outfile2 build/strtr/USE_TEMPLATE/tiers.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/USE_TEMPLATE/storTier1/.gitignore.xml .gitignore.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/USE_TEMPLATE/storTier1/.gitignore.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/USE_TEMPLATE/storTier1/.gitignore.xml obxml build
+     [exec] infile obxml/strtr/USE_TEMPLATE/storTier1/.gitignore.xml
+     [exec] outfile build/strtr/USE_TEMPLATE/storTier1/.gitignore
+     [exec] outfile2 build/strtr/USE_TEMPLATE/storTier1/.gitignore.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/build.properties.xml build.properties.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/build.properties.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/build.properties.xml obxml build
+     [exec] infile obxml/strtr/build.properties.xml
+     [exec] outfile build/strtr/build.properties
+     [exec] outfile2 build/strtr/build.properties.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tierStor/build.sh.xml build.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tierStor/build.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tierStor/build.sh.xml obxml build
+     [exec] infile obxml/strtr/tierStor/build.sh.xml
+     [exec] outfile build/strtr/tierStor/build.sh
+     [exec] outfile2 build/strtr/tierStor/build.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tierStor/build.pl.xml build.pl.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tierStor/build.pl.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tierStor/build.pl.xml obxml build
+     [exec] infile obxml/strtr/tierStor/build.pl.xml
+     [exec] outfile build/strtr/tierStor/build.pl
+     [exec] outfile2 build/strtr/tierStor/build.pl.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/clean.sh.xml clean.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/clean.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/clean.sh.xml obxml build
+     [exec] infile obxml/strtr/clean.sh.xml
+     [exec] outfile build/strtr/clean.sh
+     [exec] outfile2 build/strtr/clean.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/default.properties.xml default.properties.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/default.properties.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/default.properties.xml obxml build
+     [exec] infile obxml/strtr/default.properties.xml
+     [exec] outfile build/strtr/default.properties
+     [exec] outfile2 build/strtr/default.properties.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/build_functions.sh.xml build_functions.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/build_functions.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/build_functions.sh.xml obxml build
+     [exec] infile obxml/strtr/build_functions.sh.xml
+     [exec] outfile build/strtr/build_functions.sh
+     [exec] outfile2 build/strtr/build_functions.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/build.xml.xml build.xml.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/build.xml.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/build.xml.xml obxml build
+     [exec] infile obxml/strtr/build.xml.xml
+     [exec] outfile build/strtr/build.xml
+     [exec] outfile2 build/strtr/build.xml.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/reset.sh.xml reset.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/reset.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/reset.sh.xml obxml build
+     [exec] infile obxml/strtr/reset.sh.xml
+     [exec] outfile build/strtr/reset.sh
+     [exec] outfile2 build/strtr/reset.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/find_age_once.txt.xml find_age_once.txt.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/find_age_once.txt.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/find_age_once.txt.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/find_age_once.txt.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/find_age_once.txt
+     [exec] outfile2 build/strtr/tests/testAgeTwice/find_age_once.txt.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/find_orig.gold.txt.xml find_orig.gold.txt.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/find_orig.gold.txt.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/find_orig.gold.txt.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/find_orig.gold.txt.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/find_orig.gold.txt
+     [exec] outfile2 build/strtr/tests/testAgeTwice/find_orig.gold.txt.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/build.properties.xml build.properties.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/build.properties.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/build.properties.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/build.properties.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/build.properties
+     [exec] outfile2 build/strtr/tests/testAgeTwice/build.properties.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/clean.sh.xml clean.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/clean.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/clean.sh.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/clean.sh.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/clean.sh
+     [exec] outfile2 build/strtr/tests/testAgeTwice/clean.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/find_age_twice.txt.xml find_age_twice.txt.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/find_age_twice.txt.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/find_age_twice.txt.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/find_age_twice.txt.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/find_age_twice.txt
+     [exec] outfile2 build/strtr/tests/testAgeTwice/find_age_twice.txt.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/test.sh.xml test.sh.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/test.sh.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/test.sh.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/test.sh.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/test.sh
+     [exec] outfile2 build/strtr/tests/testAgeTwice/test.sh.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/find_orig.txt.xml find_orig.txt.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/find_orig.txt.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/find_orig.txt.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/find_orig.txt.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/find_orig.txt
+     [exec] outfile2 build/strtr/tests/testAgeTwice/find_orig.txt.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/find_age_once.gold.txt.xml find_age_once.gold.txt.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/find_age_once.gold.txt.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/find_age_once.gold.txt.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/find_age_once.gold.txt.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/find_age_once.gold.txt
+     [exec] outfile2 build/strtr/tests/testAgeTwice/find_age_once.gold.txt.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] obxml/strtr/tests/testAgeTwice/find_age_twice.gold.txt.xml find_age_twice.gold.txt.xml
+     [exec] cmd q{/bin/bash ../../../w/stilts_t3/rsrc/do_OBXml.sh obxml/strtr/tests/testAgeTwice/find_age_twice.gold.txt.xml obxml build 2>&1}
+     [exec] result q{OBXML_CONFIG = 'obxml'
+     [exec] args obxml/strtr/tests/testAgeTwice/find_age_twice.gold.txt.xml obxml build
+     [exec] infile obxml/strtr/tests/testAgeTwice/find_age_twice.gold.txt.xml
+     [exec] outfile build/strtr/tests/testAgeTwice/find_age_twice.gold.txt
+     [exec] outfile2 build/strtr/tests/testAgeTwice/find_age_twice.gold.txt.obxml.xml
+     [exec] error '0'
+     [exec] }
+     [exec] 
+     [exec] 
+
+build-strtr:
+
+build-deep-check:
+
+build-deep-do:
+     [echo] copy file='/home/ubuntu/workspace/_b/s/t/build.xml' todir='build' 
+     [copy] Copying 1 file to /home/ubuntu/workspace/_b/s/t/build
+
+default.build:
+
+build-check-stilts:
+
+build-msrc:
+
+build-obxml:
+
+build-strtr:
+
+build:
+     [echo] In the build target of strtr.
+    [mkdir] Created dir: /home/ubuntu/workspace/_b/s/t/build/build/.meta.strtr
+     [exec] Variable "$self" will not stay shared at ../../../../w/stilts_t3/rsrc/Strtr.pm line 149.
+     [exec] Variable "$wordsRef" will not stay shared at ../../../../w/stilts_t3/rsrc/Strtr.pm line 173.
+     [exec] Variable "$counter" will not stay shared at ../../../../w/stilts_t3/rsrc/Strtr.pm line 185.
+     [exec] Variable "@newWordCharsetFirst" will not stay shared at ../../../../w/stilts_t3/rsrc/Strtr.pm line 208.
+     [exec] Variable "@newWordCharset" will not stay shared at ../../../../w/stilts_t3/rsrc/Strtr.pm line 209.
+     [exec] 
+     [exec] 
+     [exec] strtr/./clean.sh clean.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/./clean.sh, build/./clean.sh, build )}
+     [exec] Infile strtr/./clean.sh became 'build/clean.sh'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/./default.properties default.properties
+     [exec] cmd q{translator->translateFromFileTo( strtr/./default.properties, build/./default.properties, build )}
+     [exec] Infile strtr/./default.properties became 'build/o.p'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/strtr_cfg.tow/strtrDefault.trans.properties strtrDefault.trans.properties
+     [exec] cmd q{translator->translateFromFileTo( strtr/strtr_cfg.tow/strtrDefault.trans.properties, build/./strtr_cfg.tow/strtrDefault.trans.properties, build )}
+     [exec] Infile strtr/strtr_cfg.tow/strtrDefault.trans.properties became 'build/A6.A7/A8.A9.p'.
+     [exec] 
+     [exec] 
+     [exec] Infile strtr/./strtr_cfg.tow became 'build/A6.A7'.
+     [exec] 
+     [exec] 
+     [exec] strtr/./reset.sh reset.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/./reset.sh, build/./reset.sh, build )}
+     [exec] Infile strtr/./reset.sh became 'build/Fy.sh'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/./build_functions.sh build_functions.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/./build_functions.sh, build/./build_functions.sh, build )}
+     [exec] Infile strtr/./build_functions.sh became 'build/R.sh'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/strtr_cfg.toh/strtrDefault.trans.properties strtrDefault.trans.properties
+     [exec] cmd q{translator->translateFromFileTo( strtr/strtr_cfg.toh/strtrDefault.trans.properties, build/./strtr_cfg.toh/strtrDefault.trans.properties, build )}
+     [exec] Infile strtr/strtr_cfg.toh/strtrDefault.trans.properties became 'build/A6.Hk/A8.A9.p'.
+     [exec] 
+     [exec] 
+     [exec] Infile strtr/./strtr_cfg.toh became 'build/A6.Hk'.
+     [exec] 
+     [exec] 
+     [exec] strtr/USE_TEMPLATE/storTier2/.gitignore .gitignore
+     [exec] cmd q{translator->translateFromFileTo( strtr/USE_TEMPLATE/storTier2/.gitignore, build/./USE_TEMPLATE/storTier2/.gitignore, build )}
+     [exec] Infile strtr/USE_TEMPLATE/storTier2/.gitignore became 'build/Im/Ga/.Cy'.
+     [exec] 
+     [exec] 
+     [exec] Infile strtr/USE_TEMPLATE/storTier2 became 'build/Im/Ga'.
+     [exec] 
+     [exec] 
+     [exec] strtr/USE_TEMPLATE/tiers.sh tiers.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/USE_TEMPLATE/tiers.sh, build/./USE_TEMPLATE/tiers.sh, build )}
+     [exec] Infile strtr/USE_TEMPLATE/tiers.sh became 'build/Im/Ha.sh'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/USE_TEMPLATE/build.properties build.properties
+     [exec] cmd q{translator->translateFromFileTo( strtr/USE_TEMPLATE/build.properties, build/./USE_TEMPLATE/build.properties, build )}
+     [exec] Infile strtr/USE_TEMPLATE/build.properties became 'build/Im/build.p'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/USE_TEMPLATE/storTier1/.gitignore .gitignore
+     [exec] cmd q{translator->translateFromFileTo( strtr/USE_TEMPLATE/storTier1/.gitignore, build/./USE_TEMPLATE/storTier1/.gitignore, build )}
+     [exec] Infile strtr/USE_TEMPLATE/storTier1/.gitignore became 'build/Im/GY/.Cy'.
+     [exec] 
+     [exec] 
+     [exec] Infile strtr/USE_TEMPLATE/storTier1 became 'build/Im/GY'.
+     [exec] Infile strtr/./USE_TEMPLATE became 'build/Im'.
+     [exec] 
+     [exec] 
+     [exec] strtr/tierStor/build.pl build.pl
+     [exec] cmd q{translator->translateFromFileTo( strtr/tierStor/build.pl, build/./tierStor/build.pl, build )}
+     [exec] Infile strtr/tierStor/build.pl became 'build/q/build.pl'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tierStor/build.sh build.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/tierStor/build.sh, build/./tierStor/build.sh, build )}
+     [exec] Infile strtr/tierStor/build.sh became 'build/q/build.sh'.
+     [exec] 
+     [exec] 
+     [exec] Infile strtr/./tierStor became 'build/q'.
+     [exec] 
+     [exec] 
+     [exec] strtr/./build.xml.debug build.xml.debug
+     [exec] cmd q{translator->translateFromFileTo( strtr/./build.xml.debug, build/./build.xml.debug, build )}
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/./build.xml.obxml.xml build.xml.obxml.xml
+     [exec] cmd q{translator->translateFromFileTo( strtr/./build.xml.obxml.xml, build/./build.xml.obxml.xml, build )}
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/./build.sh build.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/./build.sh, build/./build.sh, build )}
+     [exec] Infile strtr/./build.sh became 'build/build.sh'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/./build.xml build.xml
+     [exec] cmd q{translator->translateFromFileTo( strtr/./build.xml, build/./build.xml, build )}
+     [exec] Infile strtr/./build.xml became 'build/build.xml'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/./build.properties build.properties
+     [exec] cmd q{translator->translateFromFileTo( strtr/./build.properties, build/./build.properties, build )}
+     [exec] Infile strtr/./build.properties became 'build/build.p'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/clean.sh clean.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/clean.sh, build/./tests/testAgeTwice/clean.sh, build )}
+     [exec] Infile strtr/tests/testAgeTwice/clean.sh became 'build/k/l/clean.sh'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/find_age_twice.txt find_age_twice.txt
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/find_age_twice.txt, build/./tests/testAgeTwice/find_age_twice.txt, build )}
+     [exec] Infile strtr/tests/testAgeTwice/find_age_twice.txt became 'build/k/l/CV.txt'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/find_age_once.txt find_age_once.txt
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/find_age_once.txt, build/./tests/testAgeTwice/find_age_once.txt, build )}
+     [exec] Infile strtr/tests/testAgeTwice/find_age_once.txt became 'build/k/l/CT.txt'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/find_orig.txt find_orig.txt
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/find_orig.txt, build/./tests/testAgeTwice/find_orig.txt, build )}
+     [exec] Infile strtr/tests/testAgeTwice/find_orig.txt became 'build/k/l/CZ.txt'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/test.sh test.sh
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/test.sh, build/./tests/testAgeTwice/test.sh, build )}
+     [exec] Infile strtr/tests/testAgeTwice/test.sh became 'build/k/l/HG.sh'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/find_age_twice.gold.txt find_age_twice.gold.txt
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/find_age_twice.gold.txt, build/./tests/testAgeTwice/find_age_twice.gold.txt, build )}
+     [exec] Infile strtr/tests/testAgeTwice/find_age_twice.gold.txt became 'build/k/l/CV.D3.txt'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/find_orig.gold.txt find_orig.gold.txt
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/find_orig.gold.txt, build/./tests/testAgeTwice/find_orig.gold.txt, build )}
+     [exec] Infile strtr/tests/testAgeTwice/find_orig.gold.txt became 'build/k/l/CZ.D3.txt'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/build.properties build.properties
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/build.properties, build/./tests/testAgeTwice/build.properties, build )}
+     [exec] Infile strtr/tests/testAgeTwice/build.properties became 'build/k/l/build.p'.
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] strtr/tests/testAgeTwice/find_age_once.gold.txt find_age_once.gold.txt
+     [exec] cmd q{translator->translateFromFileTo( strtr/tests/testAgeTwice/find_age_once.gold.txt, build/./tests/testAgeTwice/find_age_once.gold.txt, build )}
+     [exec] Infile strtr/tests/testAgeTwice/find_age_once.gold.txt became 'build/k/l/CT.D3.txt'.
+     [exec] 
+     [exec] 
+     [exec] Infile strtr/tests/testAgeTwice became 'build/k/l'.
+     [exec] Infile strtr/./tests became 'build/k'.
+
+build-deep-check:
+
+build-deep-do:
+
+build-deep:
+
+build:
+
+build-deep:
+
+build:
+
+BUILD SUCCESSFUL
+Total time: 3 seconds

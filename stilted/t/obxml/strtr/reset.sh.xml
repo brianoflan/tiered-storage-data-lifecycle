@@ -1,0 +1,58 @@
+<OBXml>
+#!/bin/bash
+
+<ul label="reset.sh..consts">
+<li i="1">if [[ -z $tier_res ]] ; then
+  export tier_res=. ;
+fi ;
+</li>
+<li i="2"># DEBUG=2 ;
+</li>
+<li i="3">
+thisScript=$0 ;
+  <ul label="reset.sh..consts.sub1">
+    <li i="1">
+thisDir=$(dirname $thisScript) ;
+if [[ -z $thisDir || "$thisDir" == "." ]] ; then
+  pwdX=$(pwd) ;
+<branches field="reset.sh..debug.extra" >
+<branch value="true" >  if [[ $DEBUG -gt 1 ]] ; then
+    echo "Updating thisDir from '$thisDir' to '$pwdX'." ;
+  fi ;
+</branch>
+</branches>
+  thisDir="$pwdX" ;
+fi ;
+    </li>
+    <li i="2">
+scriptBase=$(basename $thisScript) ;
+scriptBaseNoExt=$(echo $scriptBase | perl -ne 's/[.][^.]+$// && print $_') ;
+    </li>
+  </ul>
+if [[ $DEBUG -gt 1 ]] ; then
+  for x in DEBUG thisScript thisDir scriptBase scriptBaseNoExt ; do
+    eval "echo \"$x '\$$x'\"" ;
+  done 1>&2 ;
+fi ;
+</li>
+</ul>
+
+
+<branches field="reset.sh..comment.old.code" >
+  <branch value="true" >
+# mk_find_file "-exec ls -ld {} \\;" "find_ls_ld_previous_structure.txt" ;
+# mk_find_file "-print" "find_previous_structure.txt" ;
+  </branch>
+</branches>
+
+resetTiers ;
+
+<branches field="reset.sh..comment.old.code" >
+  <branch value="true" >
+# cd "$thisDir" ;
+# find ./$storTierPrefix* > ./find_storTier.txt ;
+
+#
+  </branch>
+</branches>
+</OBXml>
